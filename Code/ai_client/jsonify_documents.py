@@ -10,19 +10,18 @@ for company_dir in DATA_PATH.iterdir():
     if company_dir.is_dir():
         company_name = company_dir.name
         
-        doc_list = []
+        company_entry = {}
         for doc_file in company_dir.iterdir():
             if doc_file.is_file():
                 try:
                     content = doc_file.read_text(encoding='utf-8', errors='ignore')
                     
-                    doc_entry = {doc_file.name: content}
-                    doc_list.append(doc_entry)
+                    company_entry[doc_file.name] = content
                     
                 except Exception as e:
                     print(f"Could not read {doc_file.name}: {e}")
         
-        output_data[company_name] = doc_list
+        output_data[company_name] = company_entry
 
 with open(OUTPUT_PATH, "w", encoding='utf-8') as f:
     json.dump(output_data, f, indent=4)
