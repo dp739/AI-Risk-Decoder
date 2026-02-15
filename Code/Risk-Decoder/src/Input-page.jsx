@@ -16,13 +16,18 @@ const CATEGORIES = [
 ]
 
 function InputPage() {
-  const [selectedCategories, setSelectedCategories] = useState([])
+  const [selectedCategories, setSelectedCategories] = useState(
+    new Map(CATEGORIES.map(({ id }) => [id, false]))
+  )
+  const [additionalPrefs, setAdditionalPrefs] = useState('')
   const navigate = useNavigate()
 
   function toggleCategory(id) {
-    setSelectedCategories(prev =>
-      prev.includes(id) ? prev.filter(c => c !== id) : [...prev, id]
-    )
+    setSelectedCategories(prev => {
+      const next = new Map(prev)
+      next.set(id, !next.get(id))
+      return next
+    })
   }
 
   function handleSubmit() {
@@ -37,12 +42,23 @@ function InputPage() {
         {CATEGORIES.map(({ id, label }) => (
           <div
             key={id}
-            className={`category-card${selectedCategories.includes(id) ? ' selected' : ''}`}
+            className={`category-card${selectedCategories.get(id) ? ' selected' : ''}`}
             onClick={() => toggleCategory(id)}
           >
             {label}
           </div>
         ))}
+      </div>
+      <div className="additional-prefs">
+        <label htmlFor="additional-prefs-input">Additional preferences (optional)</label>
+        <textarea
+          id="additional-prefs-input"
+          className="additional-prefs-input"
+          placeholder="Describe any other risk areas you care about..."
+          value={additionalPrefs}
+          onChange={e => setAdditionalPrefs(e.target.value)}
+          rows={4}
+        />
       </div>
       <button className="submit-btn" onClick={handleSubmit}>
         Submit

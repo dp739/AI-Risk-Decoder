@@ -47,6 +47,37 @@
   color: #ffffff;
 }
 
+.additional-prefs {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.additional-prefs label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: #000000;
+}
+
+.additional-prefs-input {
+  width: 100%;
+  border: 2px solid #c5d5dd;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  background-color: #ffffff;
+  color: #000000
+}
+
+.additional-prefs-input:focus {
+  outline: none;
+  border-color: #4a7a8a;
+}
+
 .submit-btn {
   background-color: #1a1a1a;
   color: #ffffff;
