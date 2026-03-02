@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './App.css'
-import './styles/InputPage.css'
+import './styles/components/preferences.css';
+import './styles/components/category-card.css';
+import './styles/components/button.css';
 
 const CATEGORIES = [
   { id: 'environmental', label: 'Environmental' },

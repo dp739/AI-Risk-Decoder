@@ -2,10 +2,12 @@
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
+  padding: 1rem;
 }
 
 .preferences-wrapper h1 {
   margin-bottom: 0.25rem;
+  font-size: 1.75rem;
 }
 
 .preferences-wrapper p {
@@ -14,6 +16,7 @@
   font-size: 1rem;
 }
 
+/* Grid that holds the category cards */
 .preferences-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -21,35 +24,13 @@
   margin-bottom: 2rem;
 }
 
-.category-card {
-  background-color: #ffffff;
-  border: 2px solid #c5d5dd;
-  border-radius: 10px;
-  padding: 1rem 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #1a1a1a;
-  transition: border-color 0.2s, background-color 0.2s, color 0.2s, transform 0.1s;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.category-card:hover {
-  border-color: #4a7a8a;
-}
-
-.category-card.selected {
-  background-color: #4a7a8a;
-  border-color: #4a7a8a;
-  color: #ffffff;
-}
-
+/* Additional preferences area (text area + label) */
 .additional-prefs {
   margin-bottom: 1.5rem;
   text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .additional-prefs label {
@@ -59,6 +40,7 @@
   color: #000000;
 }
 
+/* Text area styling */
 .additional-prefs-input {
   width: 100%;
   border: 2px solid #c5d5dd;
@@ -70,7 +52,7 @@
   box-sizing: border-box;
   transition: border-color 0.2s;
   background-color: #ffffff;
-  color: #000000
+  color: #000000;
 }
 
 .additional-prefs-input:focus {
@@ -78,18 +60,14 @@
   border-color: #4a7a8a;
 }
 
-.submit-btn {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  padding: 0.75em 2.5em;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+/* Responsive fallback */
+@media (max-width: 720px) {
+  .preferences-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
-.submit-btn:hover {
-  background-color: #4a7a8a;
+@media (max-width: 420px) {
+  .preferences-container {
+    grid-template-columns: 1fr;
+  }
 }

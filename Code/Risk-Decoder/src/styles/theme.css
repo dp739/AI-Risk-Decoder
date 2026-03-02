@@ -1,0 +1,25 @@
+:root{
+  --bg: #E3E3E3;
+  --card-bg: #b6c4cf;
+  --muted: #456882;
+  --accent: #234C6A;
+  --card-radius: 2vw;
+  --radius: 1vw;
+  --small-radius: 0.5vw;
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* make sure the page has full height and one stable background */
+html, body, #root {
+  height: 100%;
+}
+
+body{
+  font-family: var(--font-family);
+  background: linear-gradient(180deg, var(--bg), #e9edf0);
+  background-attachment: fixed; /* prevents background from seeming to shift */
+  color: #111;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}	

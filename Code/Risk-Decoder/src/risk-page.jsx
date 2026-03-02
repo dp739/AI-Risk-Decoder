@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import './styles/main-page.css'
-import './styles/InputPage.css'
 import { useNavigate } from 'react-router-dom'
+import './App.css'
+import './styles/components/preferences.css';
+import './styles/components/category-card.css';
+import './styles/components/button.css'
+import './styles/components/risk-box.css'
 
 function RiskPage() {
   const navigate = useNavigate()
@@ -14,31 +14,43 @@ function RiskPage() {
     navigate('/main')
   }
 
+  const RISKS = [
+    'Representation & Toxicity Risks',
+    'Misinformation Risks',
+    'Information & Safety Risks',
+    'Malicious Use Risks',
+    'Human Autonomy & Integrity Risks',
+    'Socioeconomic & Environmental Risks'
+  ]
+
   return (
     <>
-      <h1>risk page ~ company</h1>
-      <div className="card">
-            <div className="card__header">
-                <h2>risk 1</h2>
-            </div>
+      <h1>Risk page ~ company</h1>
+
+      <div className="risk_container">
+        <ul className="risk_boxes">
+          {RISKS.map((r, i) => (
+            <li className="risk_box" key={i}>
+              <div className="left">
+                <span className="bullet" />
+                <span className="label">{r}</span>
+              </div>
+              <button
+                className="action"
+                onClick={() => {
+                  /* replace with real per-risk route or modal when available */
+                  console.log('View details for', r)
+                }}
+              >
+                View
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
-      <div className="card">
-            <div className="card__header">
-                <h2>risk 2</h2>
-            </div>
-      </div>
-      <div className="card">
-            <div className="card__header">
-                <h2>risk 3</h2>
-            </div>
-      </div>
-      <div className="card">
-            <div className="card__header">
-                <h2>risk 4</h2>
-            </div>
-      </div>
-      <button className="submit-btn" onClick={handleBack}>
-        main page
+
+      <button className="submit-btn" onClick={() => navigate('/main')}>
+        Back to main
       </button>
     </>
   )

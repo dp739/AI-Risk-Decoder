@@ -1,5 +1,8 @@
-import './App.css'
-import './styles/main-page.css'
+import React from 'react';
+import './styles/main-page.css';
+import './styles/components/card.css';
+import './styles/components/button.css';
+import './styles/components/search.css';
 
 import safety from './Proper_icons/information&safety.svg'
 import malicious from './Proper_icons/malicious.svg'

@@ -1,185 +1,41 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
-}
-#main_page{
-    @media (max-aspect-ratio: 1) { width:91vw;}
-    @media (min-aspect-ratio: 1) { width:82vw;}
-    height:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.risk_grid{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
-}
-.full_card{
-    transform-style: preserve-3d;
-    transform: rotateY(var(--rotate-y,0));
-    transition: 0.7s;
-    position: relative;
-    margin: 0.5vw ;
-    @media (max-aspect-ratio: 1) { width:90vw;}
-    @media (min-aspect-ratio: 1) { width:40vw;}
-    height: 70vh;
-}
-.card{
-    background-color: white;
-    border-radius: 2vw;
-    color: black;
-    width:100%;
-    height:100%;
-    backface-visibility: hidden;
-    position: absolute;
-}
-.card:hover{
-    opacity: 0.8;
+/* Page layout: header + two-column grid for cards */
+#main_page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: stretch;
 }
 
-.back{
-    color: red;
-    transform: rotateY(180deg);
-}
-.flipped{
-    --rotate-y: 180deg;
-}
-
-.card__risks{
-    list-style: none;
-
-}
-.card__header{
-    margin: 1vw 2vw 1vw 2vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    @media (max-aspect-ratio: 1) { font-size: 4vh;}
-    @media (min-aspect-ratio: 1) { font-size: 3vh;}
-
-}
-.card__header h2{
-    width: 100%;
-}
-.icon{
-    @media (max-aspect-ratio: 1) { width:6vw;}
-    @media (min-aspect-ratio: 1) { width:3vw;}
-}
-.min_icon{
-    @media (max-aspect-ratio: 1) { width:4vw;}
-    @media (min-aspect-ratio: 1) { width:2vw;}
-}
-.logo{
-    @media (max-aspect-ratio: 1) { height: 10vh;}
-    @media (min-aspect-ratio: 1) { height: 7.5vh;}
-}
-.risk_record{
-    padding: 0.5vw;
-}
-.risk_record div{
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-}
-.risk_text{
-    align-items: center;
-    padding: 0.6vw;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-
-.header{
-
-}
-.search_bar{
-    background-color: white;
-    width:40vw;
-    height: 7vh;
-    border-radius: 5vh;
-    text-align: left;
-    margin: 3vh;
-    display: flex;
-}
-.search_bar:hover{
-    background-color: lightgray;
-}
-.search_bar input{
-    @media (max-aspect-ratio: 1) { font-size: 4vh;}
-    @media (min-aspect-ratio: 1) { font-size: 3vh;}
-    width:30vw;
-    padding-left: 3vh;
-    color:black;
-    background-color: transparent;
-    border: none;
-}
-.search_bar input:focus {
-    outline: none;
+/* Two column grid for cards; grid controls card width */
+.risk_grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+  align-items: start;
+  width: 100%;
 }
 
-.search_bar button{
-    width:8vw;
-    margin-left: 2vw;
-    height: 7vh;
-    background-color: whitesmoke;
-    border: solid black 0.3vh;
-    border-radius: 5vh;
-
-}
-.search_bar button:hover{
-    background-color: darkgray;
+/* Single column on smaller screens */
+@media (max-width: 880px) {
+  .risk_grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-
-
-
-.card__body{
-    @media (max-aspect-ratio: 1) { font-size:3vw;}
-    @media (min-aspect-ratio: 1) { font-size:1.5vw;}
-    background-color: lightgray;
-    border-radius: 0.5vw;
-    margin: 2vh 1vw 2vh 1vw;
-    text-align: left;
-    height: 60%;
-    overflow: hidden;
-    overflow-y: scroll;
+/* keep header text sizing reasonable */
+#main_page h1 {
+  margin: 0;
+  font-size: 1.5rem;
 }
-.card__footer{
-    display: flex;
-    flex-direction: row;
-}
-.card_button{
-    background-color: lightslategray;
-    color: white;
-    margin: 0.5vh 0.5vw 0.5vh 0.5vw;
-    width:100%;
-    height:7vh;
-    border-radius: 1vw;
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (max-aspect-ratio: 1) { font-size:3.5vw;}
-    @media (min-aspect-ratio: 1) { font-size:1.75vw;}
-
-}
-.card_button:hover{
-    background-color: dimgray;
-}
-
-
-.back {
-    pointer-events: none;
-}
-.flipped .back {
-    pointer-events: auto;
-}
-.flipped .front {
-    pointer-events: none;
-}
-
