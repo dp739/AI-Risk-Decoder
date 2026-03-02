@@ -23,8 +23,10 @@ import Gemini from './TMP/Gemini.svg'
 import Copilot from './TMP/Copilot.svg'
 
 
-import {useState} from "react";
+import {useState, useContext} from "react";
 import {useNavigate} from "react-router-dom";
+
+import { UserPreferencesContext } from './contexts/UserPreferencesContext';
 
 const RiskRecord = ({icon_name,risk}) =>{
     return (
@@ -138,6 +140,14 @@ const SearchBar = () =>{
 
 }
 function MainPage() {
+
+  /*
+    getSelectedCategoryIds() is a getter method that gives you an array of all categories the user 
+    chose on the input page. 
+    getAdditionalPrefs() is a getter method that gives you the additional preferences of the user
+    as a string.
+  */
+  const { _, getSelectedCategoryIds, getAdditionalPrefs } = useContext(UserPreferencesContext)
 
   return (
       <div id='main_page'>

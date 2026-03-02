@@ -1,27 +1,19 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './App.css'
+import { UserPreferencesContext, CATEGORIES } from './contexts/UserPreferencesContext'
 import './styles/components/preferences.css';
 import './styles/components/category-card.css';
 import './styles/components/button.css';
 
-const CATEGORIES = [
-  { id: 'environmental', label: 'Environmental' },
-  { id: 'existential', label: 'Existential' },
-  { id: 'data-privacy', label: 'Data Privacy' },
-  { id: 'intellectual-property', label: 'Intellectual Property' },
-  { id: 'safeguards', label: 'Safeguards' },
-  { id: 'malware', label: 'Malware & Cyber Warfare' },
-  { id: 'user-liability', label: 'User Liability and Indemnification' },
-  { id: 'biometric', label: 'Biometric & Identity Theft' },
-  { id: 'child-safety', label: 'Age Compliance and Child Safety' },
-]
-
 function InputPage() {
+  const { updatePreferences, getSelectedCategoryIds, getAdditionalPrefs } = useContext(UserPreferencesContext)
+  
   const [selectedCategories, setSelectedCategories] = useState(
     new Map(CATEGORIES.map(({ id }) => [id, false]))
   )
   const [additionalPrefs, setAdditionalPrefs] = useState('')
+
   const navigate = useNavigate()
 
   function toggleCategory(id) {
@@ -33,6 +25,7 @@ function InputPage() {
   }
 
   function handleSubmit() {
+    updatePreferences(selectedCategories, additionalPrefs)
     navigate('/main')
   }
 
