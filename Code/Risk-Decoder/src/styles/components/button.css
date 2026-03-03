@@ -1,4 +1,3 @@
-/* Generic button tokens used across the app */
 .btn {
   display:inline-flex;
   align-items:center;
@@ -9,13 +8,13 @@
   transition: background-color 0.15s, transform 0.08s;
 }
 
-/* Card-specific action */
 .card_button{
     background-color: lightslategray;
     color: white;
-    margin: 0.5vh 0.5vw;
+    margin: 1vh 1vw;
     width:100%;
-    height:7vh;
+    height:12vh;
+    border: none;
     border-radius: 1vw;
     display: flex;
     align-items: center;
@@ -33,10 +32,9 @@
 }
 .submit-btn:hover{ background-color: var(--accent); }
 
-/* small responsive font sizing */
 @media (max-aspect-ratio: 1) {
-  .card_button{ font-size: 3.5vw; }
+  .card_button{ font-size: 3vw; }
 }
 @media (min-aspect-ratio: 1) {
-  .card_button{ font-size: 1.75vw; }
+  .card_button{ font-size: 1.3vw; }
 }
