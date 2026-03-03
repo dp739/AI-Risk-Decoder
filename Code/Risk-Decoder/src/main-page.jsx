@@ -72,16 +72,16 @@ const Card = ({service_name,risk_page,icon}) => {
                     </ul>
                 </div>
                 <div className="card__footer">
-                    <div className="card_button"
-                         onClick={(e)=>{e.stopPropagation();navigate(risk_page)}}>
-                        <img className="min_icon" src={details} alt="details icon"/>
+                    <button className="card_button"
+                            onClick={(e)=>{e.stopPropagation();navigate(risk_page)}}>
+                        <img className="min_icon" src={details} alt="details icon" />
                         &nbsp;View Details
-                    </div>
-                    <div className="card_button"
-                         onClick={(e)=>{e.stopPropagation();navigate(risk_page)}}>
-                        <img className="min_icon" src={read} alt="analyze icon"/>
+                    </button>
+                    <button className="card_button"
+                            onClick={(e)=>{e.stopPropagation();navigate(risk_page)}}>
+                        <img className="min_icon" src={read} alt="analyze icon" />
                         &nbsp;Analyze Documents
-                    </div>
+                    </button>
                 </div>
             </div>
 
