@@ -20,9 +20,14 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  box-sizing: border-box;
+  border: 2px solid var(--accent, #ffffff);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .card:hover {
   opacity: 0.95;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .front { transform: rotateY(0deg); }
@@ -39,19 +44,20 @@
 .card__header h2{ width: 100%; }
 
 .card__body{
-  background-color: #e6e9eb;
+  background-color: var(--card-inner);
   border-radius: var(--small-radius);
   margin: 1.25rem;
   text-align: left;
   height: 60%;
   overflow-y: auto;
   padding: 0.75rem;
+  border: 1px solid var(--muted, #ffffff);
 }
 
 .card__footer{
     display: flex;
     gap: 0vw;
-    padding: 0.5rem;
+    padding: 0.5rem 1.25rem;
 }
 
 .card__risks{ list-style: none; padding-left: 0; }

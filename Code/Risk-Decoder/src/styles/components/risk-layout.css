@@ -11,13 +11,13 @@
 .risk_column {}
 
 .news_article {
-  background: #e6caca;
+  background: var(--bg, #ffffff);
   border-radius: var(--card-radius);
   padding: 1rem;
   color: #111;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   min-height: 120px;
-  border: 2px solid #7a0b0b;
+  border: 2px solid var(--accent, #ffffff);
 
   justify-self: end;
   align-self: start;
@@ -32,8 +32,8 @@
 .news_article__badge {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #7a0b0b;
-  background: rgba(122,11,11,0.06);
+  color: var(--accent, #ffffff);
+  background: var(--extra-mutedbg, #ffffff);
   padding: 0.25rem 0.5rem;
   border-radius: 0.35rem;
   align-self: flex-start;

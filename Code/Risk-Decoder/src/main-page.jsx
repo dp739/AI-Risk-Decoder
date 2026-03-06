@@ -92,28 +92,11 @@ const Card = ({service_name,risk_page,icon}) => {
                  onTouchStart={(e) => e.stopPropagation()}>
                 <div className="card__header">
                     <img className="logo" src={icon} alt={service_name+" icon"}/>
-                    <h2>{service_name}</h2>
+                    <h2>OpenAI Seals Pentagon Deal</h2>
                 </div>
                 <div className="card__body">
-                    Beautiful is better than ugly.
-                    Explicit is better than implicit.
-                    Simple is better than complex.
-                    Complex is better than complicated.
-                    Flat is better than nested.
-                    Sparse is better than dense.
-                    Readability counts.
-                    Special cases aren't special enough to break the rules.
-                    Although practicality beats purity.
-                    Errors should never pass silently.
-                    Unless explicitly silenced.
-                    In the face of ambiguity, refuse the temptation to guess.
-                    There should be one-- and preferably only one --obvious way to do it.[c]
-                    Although that way may not be obvious at first unless you're Dutch.
-                    Now is better than never.
-                    Although never is often better than right now.[d]
-                    If the implementation is hard to explain, it's a bad idea.
-                    If the implementation is easy to explain, it may be a good idea.
-                    Namespaces are one honking great idea – let's do more of those!
+                    OpenAI has officially secured a massive contract to integrate its AI models into the U.S. Department of Defense's classified networks, stepping in just as the Trump administration blacklisted rival Anthropic over safety disputes. 
+                    While Anthropic was designated a "supply chain risk" for refusing to drop safeguards against fully autonomous weaponry and mass surveillance, OpenAI successfully negotiated terms by technically embedding these "red lines" into its cloud architecture rather than just the legal contract.
                 </div>
                 <div className="card__footer">
                     <div className="card_button"

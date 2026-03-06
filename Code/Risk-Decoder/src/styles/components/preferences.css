@@ -40,7 +40,7 @@
 
 .additional-prefs-input {
   width: 100%;
-  border: 2px solid #c5d5dd;
+  border: 2px solid var(--extra-muted, #ffffff);
   border-radius: 10px;
   padding: 0.75rem;
   font-size: 0.95rem;
@@ -54,7 +54,7 @@
 
 .additional-prefs-input:focus {
   outline: none;
-  border-color: #4a7a8a;
+  border-color: var(--muted, #ffffff);;
 }
 
 @media (max-width: 720px) {

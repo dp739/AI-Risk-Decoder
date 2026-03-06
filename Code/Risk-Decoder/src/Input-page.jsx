@@ -48,7 +48,7 @@ function InputPage() {
         ))}
       </div>
       <div className="additional-prefs">
-        <label htmlFor="additional-prefs-input">None of those quite fit? tell us more.</label>
+        <label htmlFor="additional-prefs-input">None of those quite fit? Tell us more.</label>
         <textarea
           id="additional-prefs-input"
           className="additional-prefs-input"

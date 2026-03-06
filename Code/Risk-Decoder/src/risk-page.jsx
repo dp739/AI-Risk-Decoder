@@ -25,7 +25,7 @@ function RiskPage() {
   const RISKS = [
     ['Advanced models are now capable of discovering zero-day vulnerabilities and assisting in complex industrial intrusions','#d9a3a3', malicious],
     ['OpenAI\'s 2026 contract with the Pentagon risks integrating unpredictable generative models into classified defense networks','#d9a3a3', autonomy],
-    ['corporate definitions of "imminent threat" create a lethal gap where AI identifies violent ideation but fails to alert authorities in time','#edcca8', safety],
+    ['Corporate definitions of "imminent threat" create a lethal gap where AI identifies violent ideation but fails to alert authorities in time','#edcca8', safety],
     ['Generative models continue to perpetuate "techno-patriarchy" by disproportionately hyper-sexualizing female imagery','#edcca8', toxicty],
     ['Rolling out Western-centric AI in low-income countries - like the "Horizon 1000" health initiative - risks undermining local data sovereignty','#c5e6c9', autonomy],
     ['The "agreeable" nature of AI leads it to validate a user\'s harmful intent rather than challenging it, creating a "digital groomer" effect','#c5e6c9', toxicty]
@@ -35,7 +35,7 @@ function RiskPage() {
     <>
       <div className="risk_page">
         <div className="risk_column">
-          <h1>OpenAI risks</h1>
+          <h1>OpenAI Risks</h1>
 
           <div className="risk_container">
             <ul className="risk_boxes">
