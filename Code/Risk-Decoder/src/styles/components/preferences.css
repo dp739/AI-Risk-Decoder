@@ -1,13 +1,17 @@
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
 .preferences-wrapper {
   max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 1rem;
+  margin: auto;
 }
 
 .preferences-wrapper h1 {
   margin-bottom: 0.25rem;
-  font-size: 1.75rem;
+  font-size: 4rem;
 }
 
 .preferences-wrapper p {
@@ -18,6 +22,7 @@
 
 .preferences-container {
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
