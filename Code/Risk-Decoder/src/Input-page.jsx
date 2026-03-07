@@ -43,7 +43,7 @@ function InputPage() {
             className={`category-card${selectedCategories.get(id) ? ' selected' : ''}`}
             onClick={() => toggleCategory(id)}
           >
-            <img className="icon" src={icon} alt="risk"/>
+            <img className="icon" src={icon} style={{ filter: selectedCategories.get(id) ? "invert(1)" : "none" }} alt="risk"/>
             {label}
           </div>
         ))}

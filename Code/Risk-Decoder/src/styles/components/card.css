@@ -63,6 +63,7 @@
 .card__risks{ list-style: none; padding-left: 0; }
 
 .icon{ width: 3vw; }
+.iconselected{ filter: "brightness(0) invert(1)" }
 .min_icon{ width: 2vw; }
 .logo{ height: 7.5vh; }
 
